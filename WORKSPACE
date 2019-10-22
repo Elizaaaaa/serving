@@ -8,10 +8,9 @@ workspace(name = "tf_serving")
 # 3. Request the new archive to be mirrored on mirror.bazel.build for more
 #    reliable downloads.
 load("//tensorflow_serving:repo.bzl", "tensorflow_http_archive")
-tensorflow_http_archive(
-    name = "org_tensorflow",
-    sha256 = "b38de3408a4190246f2814dd7388cec72807b736fbcef5087e3b86a3f179bb0f",
-    git_commit = "64c3d382cadf7bbe8e7e99884bede8284ff67f56",
+local_repository(
+     name = "org_tensorflow",
+     path = "/home/tensorflow",
 )
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
